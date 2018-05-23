@@ -3,7 +3,7 @@ package kalah;
 import java.util.Arrays;
 
 class Pits {
-    private int[] pits;
+    private final int[] pits;
 
     Pits() {
         pits = new int[13];
@@ -68,7 +68,7 @@ class Pits {
         return totalSeedsInPlayerPits == 0;
     }
 
-    void addRemainingSeeds(Player p1, Player p2){
+    int remainingSeeds(int player){
         int p1SeedsRemaining = 0;
         int p2SeedsRemaining = 0;
 
@@ -77,8 +77,11 @@ class Pits {
             p2SeedsRemaining += getValue(i+7);
         }
 
-        p1.increaseScore(p1SeedsRemaining);
-        p2.increaseScore(p2SeedsRemaining);
+        if (player == 1){
+            return p1SeedsRemaining;
+        }else {
+            return p2SeedsRemaining;
+        }
     }
 
     boolean endsInOwnStore(int index, int player){

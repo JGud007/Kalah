@@ -1,7 +1,7 @@
 package kalah;
 
 class Player {
-    private int playerNumber;
+    private final int playerNumber;
     private int score;
     private boolean isTurn;
 
@@ -14,6 +14,8 @@ class Player {
     int getScore(){
         return score;
     }
+
+    int getPlayerNumber(){ return playerNumber; }
 
     void increaseScore(int scoreIncrease){
         score += scoreIncrease;
@@ -29,13 +31,5 @@ class Player {
         isTurn = false;
     }
 
-    void updateScore(int finalIndex, int numSeeds){
-        if(playerNumber == 1){
-            if(numSeeds >= 19){increaseScore(2);}
-            else if(finalIndex >= 7 || numSeeds > 5){increaseScore(1);}
-        }else{
-            if(numSeeds >= 19){increaseScore(2);}
-            else if(finalIndex < 7 || numSeeds > 5){increaseScore(1);}
-        }
-    }
+    void updateScore(int index, int scoreInc){}
 }
