@@ -2,17 +2,22 @@ package kalah;
 
 import com.qualitascorpus.testsupport.IO;
 
-class KalahManager extends GameManager {
+class KalahManager extends GameManager{
     private final Pits pits;
     private final KalahIOManager ioManager;
+    private Player[] kalahPlayers;
 
-    KalahManager(IO io, Player[] players) {
-        super(players);
+    KalahManager(IO io) {
+        kalahPlayers = new Player[2];
+        kalahPlayers[0] = new KalahPlayer(1);
+        kalahPlayers[0].setIsTurnTrue();
+        kalahPlayers[1] = new KalahPlayer(2);
+        super.setPlayerArray(kalahPlayers);
         pits = new Pits();
         ioManager = new KalahIOManager(io);
     }
 
-    boolean playTurn(){
+    public boolean playTurn(){
         ioManager.printKalahBoard(pits,getPlayersScore(0),getPlayersScore(1));
         int index = ioManager.receiveInputKalah(getCurrentPlayersTurn());
         if (index != -1){

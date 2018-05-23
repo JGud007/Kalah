@@ -1,13 +1,12 @@
 package kalah;
 
-class GameManager {
-    private final Player[] playerArray;
+abstract class GameManager implements IGameBehaviour {
+    private Player[] playerArray;
 
-    GameManager(Player[] players){ //, Player typeOfPlayers){
-        //typeOfPlayers = typeOfPlayers.getClass();
-        playerArray = players;
-        playerArray[0].setIsTurnTrue();
+    GameManager(){
     }
+
+    public void setPlayerArray(Player[] playerArray) { this.playerArray = playerArray; }
 
     int getCurrentPlayersTurn(){
         for (Player aPlayerArray : playerArray) {
@@ -36,7 +35,7 @@ class GameManager {
         playerArray[player-1].increaseScore(scoreIncrease);
     }
 
-    Player getPlayer(int player){
-        return playerArray[player-1];
-    }
+    Player getPlayer(int player){ return playerArray[player-1]; }
+
+
 }
