@@ -2,7 +2,7 @@ package kalah;
 
 import com.qualitascorpus.testsupport.IO;
 
-public class KalahIOManager extends IOManager{
+class KalahIOManager extends IOManager{
     private final IO io;
 
     KalahIOManager(IO ioIn) {

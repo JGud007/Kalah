@@ -1,5 +1,5 @@
 package kalah;
 
-public interface IGameBehaviour {
+interface IGameBehaviour {
     boolean playTurn();
 }

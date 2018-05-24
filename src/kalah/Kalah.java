@@ -12,9 +12,11 @@ public class Kalah {
 		new Kalah().play(new MockIO());
 	}
 	public void play(IO io) {
+	    //setup game
 		GameManager kalahManager = new KalahManager(io);
 		Game game = new Game(kalahManager);
 		boolean gameInProgress = true;
+		//run game
 		while(gameInProgress) {
 			gameInProgress = game.playTurn();
 		}

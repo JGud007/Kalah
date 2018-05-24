@@ -6,7 +6,7 @@ abstract class GameManager implements IGameBehaviour {
     GameManager(){
     }
 
-    public void setPlayerArray(Player[] playerArray) { this.playerArray = playerArray; }
+    void setPlayerArray(Player[] playerArray) { this.playerArray = playerArray; }
 
     int getCurrentPlayersTurn(){
         for (Player aPlayerArray : playerArray) {

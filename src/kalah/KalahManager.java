@@ -5,10 +5,9 @@ import com.qualitascorpus.testsupport.IO;
 class KalahManager extends GameManager{
     private final Pits pits;
     private final KalahIOManager ioManager;
-    private Player[] kalahPlayers;
 
     KalahManager(IO io) {
-        kalahPlayers = new Player[2];
+        Player[] kalahPlayers = new Player[2];
         kalahPlayers[0] = new KalahPlayer(1);
         kalahPlayers[0].setIsTurnTrue();
         kalahPlayers[1] = new KalahPlayer(2);

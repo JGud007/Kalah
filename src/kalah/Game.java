@@ -1,6 +1,6 @@
 package kalah;
 
-public class Game {
+class Game {
     private IGameBehaviour gameBehaviour;
 
     public Game(IGameBehaviour gameBehaviour) {
